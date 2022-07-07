@@ -1,0 +1,275 @@
+/* Global font "Poppins
+======================= */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Global styles 
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+/* Global styles
+===================== */
+:root {
+  --bg-color: #edeff0;
+  --black: #444;
+  --deep-green: #0ad2aa;
+  --background: #edeff0;
+  --border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  --border-thick: 2px solid#F1F1F1;
+  --border-thick-black: 2px solid#333;
+  --button: #8d0f0f;
+  --box-shadow: 0.4rem 0.4rem 1rem #ccc, -0.4rem -0.4rem 1rem #fff;
+  --box-shadow-inset: 0.4rem 0.4rem 1rem #ccc inset,
+    -0.4rem -0.4rem 1rem #fff inset;
+  --darkorange: #ff8c00;
+  --green: #27ae60;
+  --light-black: #666;
+  --lightgrey: #ddd;
+  --light-color: #777;
+  --orangered: #ff4500;
+  --primary: #00ff00;
+  --secondary: #075f07;
+  --white-color: #fff;
+}
+
+/* Header section styles
+======================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: var(--bg-color);
+  width: 20rem;
+  border-right: var(--border);
+  height: 100%;
+  padding: 0.7rem 1.5rem;
+  text-align: center;
+}
+
+.header .admin img {
+  margin: 0.3rem 0;
+  border: 0.8rem solid transparent;
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+  box-shadow: var(--box-shadow);
+}
+
+.header .admin h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+}
+
+.header .admin p {
+  color: var(--green);
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+
+.header .navbar {
+  margin-top: 1rem;
+}
+
+.header .navbar a {
+  display: block;
+  margin: 0.8rem 0;
+  padding: 0.5rem;
+  border-radius: 5rem;
+  font-size: 1rem;
+  box-shadow: var(--box-shadow);
+  color: var(--light-black);
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.header .navbar > a:hover {
+  color: var(--deep-green);
+  box-shadow: var(--box-shadow-inset);
+}
+
+.header .social-links {
+  border-top: var(--border);
+  border-bottom: var(--border);
+  margin-top: 1.5rem;
+  padding: 0.2rem;
+}
+.header .social-links > a {
+  color: var(--black);
+  margin: 0.1rem 0.8rem;
+  font-size: 1.5rem;
+}
+
+/* Body active styles
+===================== */
+body {
+  background: var(--bg-color);
+  padding-left: 20rem;
+}
+
+body.active {
+  --black: #fff;
+  --light-color: #ddd;
+  --lightgrey: #222;
+  --darkorange: #fff;
+  --bg-color: #222;
+  --border-thick: var(--border-thick-black);
+  --border: 0.1rem solid rgba(0, 0, 0, 0.4);
+  --box-shadow: 0.4rem 0.4rem 1rem #111, -0.4rem -0.4rem 1rem #333;
+  --box-shadow-inset: 0.4rem 0.4rem 1rem #111 inset,
+    -0.4rem -0.4rem 1rem #333 inset;
+  --box-shadow: 0.4rem 0.4rem 1rem #111, -0.4rem -0.4rem 1rem #333;
+  --box-shadow-inset: 0.4rem 0.4rem 1rem #111 inset,
+    -0.4rem -0.4rem 1rem #333 inset;
+}
+
+/* Menu toggler begins
+===================== */
+#menu-btn {
+  position: fixed;
+  top: 0.6rem;
+  left: 0.6rem;
+  z-index: 1000;
+  height: 3.8rem;
+  width: 3.8rem;
+  line-height: 3.8rem;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  color: var(--black);
+  background: var(--bg-color);
+  display: none;
+}
+
+#menu-btn:hover {
+  color: var(--green);
+  box-shadow: var(--box-shadow-inset);
+}
+
+/* Theme toggler begins
+=======================*/
+#theme-toggler {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1000;
+  height: 3rem;
+  width: 3rem;
+  line-height: 3rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  color: var(--black);
+  background: var(--bg-color);
+}
+
+#theme-toggler:hover {
+  color: var(--green);
+  box-shadow: var(--box-shadow-inset);
+}
+
+/* Flex container (for all sections)
+==================================== */
+.flex-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--flex-container-bg);
+}
+
+/* Home content styles
+====================== */
+.home-content {
+  background-image: url("../images/7.jpg");
+  width: 100%;
+  background-position: 100 100;
+  background-size: cover;
+}
+section {
+  height: 100vh;
+  padding: 0.5rem 1rem;
+}
+.content-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.content-box .content-wrapper h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.home-content .content-box .content-wrapper > h2 {
+  font-size: 1.8rem;
+  color: var(--h1-color);
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+.home-content .content-box .content-wrapper h3 {
+  font-size: 1.5rem;
+  color: var(--h1-color);
+}
+.home-content .content-box .content-wrapper p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: var(--paragraph-color);
+  letter-spacing: 1px;
+  padding-left: 13rem;
+  padding-right: 13rem;
+  margin-bottom: 3rem;
+}
+
+.home-content .content-box {
+  color: var(--white-color);
+}
+.home-content .content-box .content-wrapper .link-button {
+  color: var(--white-color);
+  font-weight: 700;
+  background-image: linear-gradient(to bottom right, red, #f75929);
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 0.1rem 0.2rem 0.3rem #912903;
+}
+
+/* Btn  begins
+======================= */
+.btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  cursor: pointer;
+  background: none;
+  color: var(--black);
+  box-shadow: var(--box-shadow);
+}
+
+.btn:hover {
+  box-shadow: var(--box-shadow-inset);
+  color: var(--green);
+}
+
+/* Footer styles
+================ */
+.footer-area {
+  background-color: var(--lightgrey);
+  padding: 1rem 2rem;
+  width: 100%;
+  color: var(--text-white);
+}
