@@ -20,7 +20,8 @@
   --black: #444;
   --deep-green: #0ad2aa;
   --background: #edeff0;
-  --border: 0.1rem solid rgba(0, 0, 0, 0.2);
+  --border-thin: 0.1rem solid rgba(0, 0, 0, 0.2);
+  --border-thin-black: 0.1rem solid rgba(0, 0, 0, 0.5);
   --border-thick: 2px solid#F1F1F1;
   --border-thick-black: 2px solid#333;
   --button: #8d0f0f;
@@ -47,7 +48,7 @@
   z-index: 999;
   background: var(--bg-color);
   width: 20rem;
-  border-right: var(--border);
+  border-right: var(--border-thin);
   height: 100%;
   padding: 0.7rem 1.5rem;
   text-align: center;
@@ -62,9 +63,9 @@
   box-shadow: var(--box-shadow);
 }
 
-.header .admin h3 {
+.header .admin h2 {
   color: var(--black);
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .header .admin p {
@@ -79,10 +80,10 @@
 
 .header .navbar a {
   display: block;
-  margin: 0.8rem 0;
+  margin: 1rem 0;
   padding: 0.5rem;
   border-radius: 5rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   box-shadow: var(--box-shadow);
   color: var(--light-black);
   text-transform: capitalize;
@@ -95,17 +96,28 @@
 }
 
 .header .social-links {
-  border-top: var(--border);
-  border-bottom: var(--border);
+  border-top: var(--border-thin);
+  border-bottom: var(--border-thin);
   margin-top: 1.5rem;
-  padding: 0.2rem;
+  padding: 0.3rem;
 }
 .header .social-links > a {
   color: var(--black);
   margin: 0.1rem 0.8rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
+/* Decorated title text
+======================= */
+.decorated-title-text {
+  color: var(--orangered);
+}
+
+html {
+  font-size: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
 /* Body active styles
 ===================== */
 body {
@@ -115,10 +127,12 @@ body {
 
 body.active {
   --black: #fff;
+  --border-thin: var(--border-thin-black);
   --light-color: #ddd;
   --lightgrey: #222;
   --darkorange: #fff;
   --bg-color: #222;
+  --orangered: aqua;
   --border-thick: var(--border-thick-black);
   --border: 0.1rem solid rgba(0, 0, 0, 0.4);
   --box-shadow: 0.4rem 0.4rem 1rem #111, -0.4rem -0.4rem 1rem #333;
@@ -133,14 +147,14 @@ body.active {
 ===================== */
 #menu-btn {
   position: fixed;
-  top: 0.6rem;
-  left: 0.6rem;
+  top: 0.8rem;
+  left: 0.8rem;
   z-index: 1000;
-  height: 3.8rem;
-  width: 3.8rem;
-  line-height: 3.8rem;
+  height: 3rem;
+  width: 3rem;
+  line-height: 3rem;
   border-radius: 50%;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   cursor: pointer;
   box-shadow: var(--box-shadow);
   text-align: center;
@@ -158,8 +172,8 @@ body.active {
 =======================*/
 #theme-toggler {
   position: fixed;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.8rem;
+  right: 0.9rem;
   z-index: 1000;
   height: 3rem;
   width: 3rem;
@@ -207,43 +221,52 @@ section {
   align-items: center;
   height: 100vh;
 }
+
+.content-wrapper {
+  color: var(--black);
+}
 .content-box .content-wrapper h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
   text-transform: capitalize;
   font-weight: 800;
 }
 
-.home-content .content-box .content-wrapper > h2 {
+.home-content .flex-container .content-box .content-wrapper > h2 {
   font-size: 1.8rem;
   color: var(--h1-color);
   text-transform: capitalize;
   margin-bottom: 1rem;
 }
-.home-content .content-box .content-wrapper h3 {
+.home-content .flex-container .content-box .content-wrapper h3 {
   font-size: 1.5rem;
   color: var(--h1-color);
 }
-.home-content .content-box .content-wrapper p {
-  font-family: "Poppins", sans-serif;
+.home-content .flex-container .content-box .content-wrapper p {
   font-size: 1rem;
-  color: var(--paragraph-color);
   letter-spacing: 1px;
   padding-left: 13rem;
   padding-right: 13rem;
   margin-bottom: 3rem;
 }
 
-.home-content .content-box {
+.home-content .flex-container .content-box .content-wrapper {
   color: var(--white-color);
 }
-.home-content .content-box .content-wrapper .link-button {
+.home-content .flex-container .content-box .content-wrapper .link-button {
   color: var(--white-color);
   font-weight: 700;
   background-image: linear-gradient(to bottom right, red, #f75929);
   padding: 0.5rem 1rem;
   border-radius: 1.5rem;
   box-shadow: 0.1rem 0.2rem 0.3rem #912903;
+}
+
+.home-content .flex-container .content-box .content-wrapper .link-button:hover {
+  background-image: linear-gradient(to bottom right, #f75929, orangered);
+  color: var(--background);
+  font-weight: 900;
+  box-shadow: 0.1rem 0.2rem 04rem 0.5rem #c90a0a;
 }
 
 /* Btn  begins
@@ -268,8 +291,9 @@ section {
 /* Footer styles
 ================ */
 .footer-area {
-  background-color: var(--lightgrey);
-  padding: 1rem 2rem;
+  padding: 0.95rem 2rem;
   width: 100%;
-  color: var(--text-white);
+  color: var(--black);
+  text-align: center;
+  border-top: var(--border-thin);
 }

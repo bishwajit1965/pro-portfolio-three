@@ -2,7 +2,7 @@
 ===================================*/
 @media (max-width: 991px) {
   html {
-    font-size: 60%;
+    font-size: 65%;
   }
   body {
     padding-left: 0;
@@ -18,19 +18,10 @@
     display: initial;
   }
 }
+
 @media (max-width: 450px) {
   html {
-    font-size: 100%;
-  }
-  .header {
-    width: 100%;
-    border-right: 0;
-  }
-}
-
-@media (max-width: 600px) {
-  html {
-    font-size: 100%;
+    font-size: 71%;
   }
   .header {
     width: 100%;
