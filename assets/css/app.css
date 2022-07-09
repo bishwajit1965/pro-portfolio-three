@@ -5,21 +5,26 @@
 /* Global styles 
 ===================== */
 * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
+  font-family: "Poppins", Aerial, sans-serif;
   box-sizing: border-box;
   border: none;
-  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
 }
+
 /* Global styles
 ===================== */
 :root {
-  --bg-color: #edeff0;
+  --bg-color: #e6e6e6;
   --black: #444;
   --deep-green: #0ad2aa;
   --background: #edeff0;
+  --border: 0.1rem solid rgba(0, 0, 0, 0.2);
   --border-thin: 0.1rem solid rgba(0, 0, 0, 0.2);
   --border-thin-black: 0.1rem solid rgba(0, 0, 0, 0.5);
   --border-thick: 2px solid#F1F1F1;
@@ -80,7 +85,7 @@
 
 .header .navbar a {
   display: block;
-  margin: 1rem 0;
+  margin: 0.9rem 0;
   padding: 0.5rem;
   border-radius: 5rem;
   font-size: 1.2rem;
@@ -99,18 +104,16 @@
   border-top: var(--border-thin);
   border-bottom: var(--border-thin);
   margin-top: 1.5rem;
-  padding: 0.3rem;
+  padding: 0.6rem 0.5rem;
 }
 .header .social-links > a {
-  color: var(--black);
-  margin: 0.1rem 0.8rem;
-  font-size: 1rem;
+  color: var(--light-black);
+  margin: 0.2rem 0.8rem;
+  font-size: 1.3rem;
 }
 
-/* Decorated title text
-======================= */
-.decorated-title-text {
-  color: var(--orangered);
+.header .social-links > a:hover {
+  color: var(--deep-green);
 }
 
 html {
@@ -125,14 +128,32 @@ body {
   padding-left: 20rem;
 }
 
+/* text color styles
+=========================== */
+.content-box {
+  width: 100%;
+}
+
+.content-box > h1 {
+  color: var(--light-black);
+  text-transform: capitalize;
+  font-size: 3.5rem;
+}
+.content-box > p {
+  color: var(--black);
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
 body.active {
   --black: #fff;
   --border-thin: var(--border-thin-black);
   --light-color: #ddd;
+  --light-black: #d9dee0;
   --lightgrey: #222;
   --darkorange: #fff;
   --bg-color: #222;
-  --orangered: aqua;
+  --orangered: #00ffff;
   --border-thick: var(--border-thick-black);
   --border: 0.1rem solid rgba(0, 0, 0, 0.4);
   --box-shadow: 0.4rem 0.4rem 1rem #111, -0.4rem -0.4rem 1rem #333;
@@ -200,60 +221,41 @@ body.active {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: var(--flex-container-bg);
+  height: 100vh;
 }
 
+/* Decorated title text
+======================= */
+.decorated-title-text {
+  color: var(--orangered);
+  font-weight: 700;
+}
 /* Home content styles
 ====================== */
+section {
+  min-height: 100vh;
+}
+
 .home-content {
   background-image: url("../images/7.jpg");
   width: 100%;
   background-position: 100 100;
   background-size: cover;
 }
-section {
-  height: 100vh;
-  padding: 0.5rem 1rem;
-}
-.content-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.content-wrapper {
-  color: var(--black);
-}
-.content-box .content-wrapper h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  text-transform: capitalize;
-  font-weight: 800;
-}
-
-.home-content .flex-container .content-box .content-wrapper > h2 {
-  font-size: 1.8rem;
-  color: var(--h1-color);
-  text-transform: capitalize;
-  margin-bottom: 1rem;
-}
-.home-content .flex-container .content-box .content-wrapper h3 {
-  font-size: 1.5rem;
-  color: var(--h1-color);
-}
-.home-content .flex-container .content-box .content-wrapper p {
-  font-size: 1rem;
-  letter-spacing: 1px;
-  padding-left: 13rem;
-  padding-right: 13rem;
-  margin-bottom: 3rem;
-}
-
-.home-content .flex-container .content-box .content-wrapper {
+#home-header-one {
   color: var(--white-color);
 }
-.home-content .flex-container .content-box .content-wrapper .link-button {
+#home-header-two {
+  color: var(--white-color);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+}
+#home-paragraph {
+  color: var(--white-color);
+  margin-bottom: 2.9rem;
+}
+.link-button {
   color: var(--white-color);
   font-weight: 700;
   background-image: linear-gradient(to bottom right, red, #f75929);
@@ -262,7 +264,7 @@ section {
   box-shadow: 0.1rem 0.2rem 0.3rem #912903;
 }
 
-.home-content .flex-container .content-box .content-wrapper .link-button:hover {
+.link-button:hover {
   background-image: linear-gradient(to bottom right, #f75929, orangered);
   color: var(--background);
   font-weight: 900;
@@ -272,15 +274,16 @@ section {
 /* Btn  begins
 ======================= */
 .btn {
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: inline-block;
-  padding: 1rem 3.5rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 0.5rem;
   font-size: 1.7rem;
   cursor: pointer;
   background: none;
   color: var(--black);
   box-shadow: var(--box-shadow);
+  text-transform: capitalize;
 }
 
 .btn:hover {
@@ -288,6 +291,48 @@ section {
   color: var(--green);
 }
 
+/* Contact form styles
+=======================*/
+
+.contact-me .content-box form .box {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  background: none;
+  color: var(--black);
+  font-size: 1rem;
+  text-transform: none;
+  margin: 0.5rem 0;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+}
+
+.contact-form {
+  width: 70%;
+  margin: auto;
+  border: none;
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+}
+
+.contact-me form textarea {
+  height: 10rem;
+  resize: none;
+}
+
+.content-box form .box:focus {
+  box-shadow: var(--box-shadow-inset);
+}
+.content-box form input[type="submit"] {
+  font-size: 1rem;
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  color: var(--light-black);
+}
+.content-box form input[type="submit"]:hover {
+  color: var(--deep-green);
+}
 /* Footer styles
 ================ */
 .footer-area {
@@ -296,4 +341,10 @@ section {
   color: var(--black);
   text-align: center;
   border-top: var(--border-thin);
+  text-transform: capitalize;
+}
+.footer-area > p {
+  font-weight: 700;
+  color: var(--light-black);
+  font-size: 1.3rem;
 }
